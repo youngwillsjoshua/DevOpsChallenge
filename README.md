@@ -29,33 +29,40 @@ The project structure is as follow:
 ```shell
 DevOpsChallenge
 ├── .github/
-    ├── ci.yaml             # Task 1: Create CI pipleine for Github Actions for dockerized service
+    ├── ci.yaml             # Task 1
+    ├── cd.yaml             # Task 2
+    ├── ghcr.yaml           # Task 3
 ├── microservice1/
     ├── src/
         ├── main.rs
-    ├── Dockerfile          # Task 2: Create Docker container with 3 stages: builder, dev, and prod.
-    ├── docker-compose.yaml # Task 3: Create a simple Docker Compose script to start the service 1 container.
-    ├── k8.yaml             # Task 4: Create Kubernetes cluster for the dockerized service 1.
+    ├── k8.yaml             # Task 6
 ├── microservice2/
     ├── src/
         ├── main.rs
-    ├── Dockerfile          # Task 5: Create Docker container with 3 stages: builder, dev, and prod.
-    ├── docker-compose.yaml # Task 6: Create a simple Docker Compose script to start the service 2 container.
-    ├── k8.yaml             # Task 7: Create Kubernetes cluster for the dockerized service 2.
-├── docker-compose.yaml     # Task 8: Create the last Docker Compose script to start both containers at once for dev environment.
+    ├── k8.yaml             # Task 6
+├── docker/
+    ├── Dockerfile.dev  # Task 4
+    ├── Dockerfile.prod # Task 4
+├── docker-compose.yaml     # Task 5
 ```
 
 As mentioned in the project structure, your task is to implement the following:
 
-* Task 1: Create CI pipleine for Github Actions for dockerized services: build, lint, and test.
-* Task 2: Create Docker container with 3 stages: builder, dev, and prod.
-* Task 3: Create a simple Docker Compose script to start the service 1 container.
-* Task 4: Create Kubernetes cluster for the dockerized service 1.
-* Task 5: Create Docker container with 3 stages: builder, dev, and prod.
-* Task 6: Create a simple Docker Compose script to start the service 2 container.
-* Task 7: Create Kubernetes cluster for the dockerized service 2.
-* Task 8: Create the last Docker Compose script to start both containers at once for dev environment.
-* Task 9: Host both microservices in your ow nfree tier GCPs and write the URLs in your `README.md`.
+* Task 1: Create CI pipeline in Github Actions for dockerized services: build, lint, and test.
+* Task 2: Create CD pipeline in Github Action for dockerized services into GCP.
+* Task 3: Create GHCR operations to create the image of the service and send to Github Container Registry.
+* Task 4: Create Docker container with 3 stages: builder, dev, and prod.
+* Task 5: Create a simple Docker Compose script to start the service 1 container.
+* Task 6: Create Kubernetes cluster for the dockerized service 1.
+* Task 7: Create Docker container with 3 stages: builder, dev, and prod.
+* Task 8: Create a simple Docker Compose script to start the service 2 container.
+* Task 9: Create Kubernetes cluster for the dockerized service 2.
+* Task 10: Create the last Docker Compose script to start both containers at once for dev environment.
+* Task 11: Host both microservices in your ow nfree tier GCPs and write the URLs in your `README.md`.
+* Task 12: Create a report about your deployed app in GCP:
+    * What services are used.
+    * Current cost.
+    * Projected cost.
 
 # The Objectives
 
