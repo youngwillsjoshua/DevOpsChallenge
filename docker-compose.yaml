@@ -1,2 +1,22 @@
+# docker-compose.yaml
+
+version: '3'
+
+services:
+  microservice1:
+    build:
+      context: ./service1
+      dockerfile: docker/Dockerfile.dev
+    ports:
+      - "8080:8080"
+
+  microservice2:
+    build:
+      context: ./service2
+      dockerfile: docker/Dockerfile.dev
+    ports:
+      - "8081:8081"
+
+  
 # Write Docker Compose for both Service 1 and 2
 # Include the docker compose YAML file in each service here as well

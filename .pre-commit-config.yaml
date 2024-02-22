@@ -1,1 +1,14 @@
-# Write the pre-commit config for CI and local development environment
+repos:
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v4.5.0
+  hooks:
+    - id: trailing-whitespace
+    - id: check-yaml
+
+- repo: https://github.com/youngwillsjoshua/DevOpsChallenge
+  rev: ff190f4
+  hooks:
+    - id: rustfmt
+    - id: cargo-audit
+
+

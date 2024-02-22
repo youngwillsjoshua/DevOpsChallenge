@@ -1,1 +1,8 @@
-# Write the list of the ignore modules/dirs
+# .dockerignore
+
+**/.git
+**/.gitignore
+**/.github
+**/node_modules
+**/target
+**/__pycache__
