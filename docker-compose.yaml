@@ -1,1 +1,2 @@
 # Write Docker Compose for both Service 1 and 2
+# Include the docker compose YAML file in each service here as well

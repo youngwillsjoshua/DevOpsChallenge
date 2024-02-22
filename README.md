@@ -29,54 +29,72 @@ The project structure is as follow:
 ```shell
 DevOpsChallenge
 ├── .github/
-    ├── ci.yaml             # Task 1
-    ├── cd.yaml             # Task 2
-    ├── ghcr.yaml           # Task 3
+    ├── workflows/
+      ├── service1-cd.yaml        # Task 10
+      ├── service1-ci.yaml        # Task 9
+      ├── service1-ghcr.yaml      # Task 11
+      ├── service2-cd.yaml        # Task 10
+      ├── service2-ci.yaml        # Task 9
+      ├── service2-ghcr.yaml      # Task 11
+    ├── dependabot.yaml           # Task 13
 ├── microservice1/
+    ├── docker/
+        ├── docker-compose.yaml   # Task 4
+        ├── Dockerfile.dev        # Task 2
+        ├── Dockerfile.prod       # Task 3
+    ├── kube/
+        ├── k8.yaml               # Task 7
+    ├── scripts/
+        ├── gcloud.sh             # Task 12
     ├── src/
         ├── main.rs
-    ├── k8.yaml             # Task 6
+    ├── Cargo.toml
+    ├── codecov.yaml              # Task 8
 ├── microservice2/
+    ├── docker/
+        ├── docker-compose.yaml   # Task 4
+        ├── Dockerfile.dev        # Task 2
+        ├── Dockerfile.prod       # Task 3
+    ├── kube/
+        ├── k8.yaml               # Task 7
+    ├── scripts/
+        ├── gcloud.sh             # Task 12
     ├── src/
         ├── main.rs
-    ├── k8.yaml             # Task 6
-├── docker/
-    ├── Dockerfile.dev  # Task 4
-    ├── Dockerfile.prod # Task 4
-├── docker-compose.yaml     # Task 5
+    ├── Cargo.toml
+    ├── codecov.yaml              # Task 8
+├── .dockerignore                 # Task 6
+├── .gitignore
+├── .pre-commit-config.yaml       # Task 1
+├── docker-compose.yaml           # Task 5
 ```
 
 As mentioned in the project structure, your task is to implement the following:
 
-* Task 1: Create CI pipeline in Github Actions for dockerized services: build, lint, and test.
-* Task 2: Create CD pipeline in Github Action for dockerized services into GCP.
-* Task 3: Create GHCR operations to create the image of the service and send to Github Container Registry.
-* Task 4: Create Docker container with 3 stages: builder, dev, and prod.
-* Task 5: Create a simple Docker Compose script to start the service 1 container.
-* Task 6: Create Kubernetes cluster for the dockerized service 1.
-* Task 7: Create Docker container with 3 stages: builder, dev, and prod.
-* Task 8: Create a simple Docker Compose script to start the service 2 container.
-* Task 9: Create Kubernetes cluster for the dockerized service 2.
-* Task 10: Create the last Docker Compose script to start both containers at once for dev environment.
-* Task 11: Host both microservices in your ow nfree tier GCPs and write the URLs in your `README.md`.
-* Task 12: Create a report about your deployed app in GCP:
+* Task 1: Configure the pre-commit setup for both the CI and the development environment.
+* Task 2: Create a docker image with 2 stages build with development environment: Build and Dev.
+* Task 3: Create a docker image with 2 stages build with production environment: Build and Prod.
+* Task 4: Create the docker compose setup for each service.
+* Task 5: Create the docker compose fot the global setup.
+* Task 6: List all modules/dirs that need to be excluded by Docker.
+* Task 7: Configure the Kubernetes cluster.
+* Task 8: Configure the Codecov setup for the testing analysis.
+* Task 9: Create CI pipeline in Github Actions for the respective microservice, jobs: build, lint, and test.
+* Task 10: Create CD pipeline in Github Actions for the respective microservice.
+* Task 11: Create GHCR pipeline to create a Docker image and store it in Github Container Registry.
+* Task 12: Configure the deployment script to Google Cloud Platform.
+* Task 13: Configure the Dependabot script.
+* Task 14: Host both microservices in your own free tier GCPs and write the URLs in your `README.md`.
+* Task 15: Create a report about your deployed app in GCP:
     * What services are used.
     * Current cost.
     * Projected cost.
 
-# The Objectives
+# Submission
 
-For the challenge, I prepared a checklist for you to keep the overview of the objective for this challenge:
-
-- [ ] You need to create a GitHub repository with the submission.
-- [ ] Your package GhitHub Package Registry must contain the built Dockerized artefact from your CI.
+- [ ] You need to create a GitHub repository for the submission.
 - [ ] I need to have permission to observe the repo and to download the artefact for local testing.
 - [ ] Containerize both services with the network `pleno-network`.
-- [ ] Run both containers in a Kubernetes pod and let them communicate with a private network.
-- [ ] Create a CI for the containerized applications that build, lint, and test the container.
-- [ ] Pass the test in your own CI.
-
-If you have more objectives that you want to show us within this challenge, you are welcome to do so!
 
 # Setup Guide
 
