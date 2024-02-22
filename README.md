@@ -67,6 +67,7 @@ DevOpsChallenge
 ├── .gitignore
 ├── .pre-commit-config.yaml       # Task 1
 ├── docker-compose.yaml           # Task 5
+├── Makefile                      # Task 14
 ```
 
 As mentioned in the project structure, your task is to implement the following:
@@ -84,8 +85,9 @@ As mentioned in the project structure, your task is to implement the following:
 * Task 11: Create GHCR pipeline to create a Docker image and store it in Github Container Registry.
 * Task 12: Configure the deployment script to Google Cloud Platform.
 * Task 13: Configure the Dependabot script.
-* Task 14: Host both microservices in your own free tier GCPs and write the URLs in your `README.md`.
-* Task 15: Create a report about your deployed app in GCP:
+* Task 14: Configure the Makefile for both services.
+* Task 15: Host both microservices in your own free tier GCPs and write the URLs in your `README.md`.
+* Task 16: Create a report about your deployed app in GCP:
     * What services are used.
     * Current cost.
     * Projected cost.
