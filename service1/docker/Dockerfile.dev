@@ -3,11 +3,11 @@ FROM rust:latest AS build
 
 WORKDIR /app
 
-COPY . .
+COPY .. .
 
 RUN cargo build --release
 
-# Dev Stage
+# Prod Stage
 FROM rust:latest
 
 WORKDIR /app
